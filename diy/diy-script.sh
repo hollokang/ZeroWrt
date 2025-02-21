@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 修改默认IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.66.66.253/g' package/base-files/files/bin/config_generate
 
 # profile
 sed -i 's#\\u@\\h:\\w\\\$#\\[\\e[32;1m\\][\\u@\\h\\[\\e[0m\\] \\[\\033[01;34m\\]\\W\\[\\033[00m\\]\\[\\e[32;1m\\]]\\[\\e[0m\\]\\\$#g' package/base-files/files/etc/profile
@@ -86,20 +86,20 @@ git clone https://git.kejizero.online/zhao/luci-app-mosdns.git -b v5 package/mos
 git clone https://git.kejizero.online/zhao/v2ray-geodata.git package/v2ray-geodata
 
 # 晶晨宝盒
-git_sparse_clone main https://github.com/ophub/luci-app-amlogic luci-app-amlogic
-sed -i "s|firmware_repo.*|firmware_repo 'https://github.com/oppen321/ZeroWrt'|g" package/luci-app-amlogic/root/etc/config/amlogic
+#git_sparse_clone main https://github.com/ophub/luci-app-amlogic luci-app-amlogic
+#sed -i "s|firmware_repo.*|firmware_repo 'https://github.com/oppen321/ZeroWrt'|g" package/luci-app-amlogic/root/etc/config/amlogic
 # sed -i "s|kernel_path.*|kernel_path 'https://github.com/ophub/kernel'|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 锐捷认证
-git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
+#git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
 
 # Realtek 网卡 - R8168 & R8125 & R8126 & R8152 & R8101
-rm -rf package/kernel/r8168 package/kernel/r8101 package/kernel/r8125 package/kernel/r8126
-git clone https://git.kejizero.online/zhao/package_kernel_r8168 package/kernel/r8168
-git clone https://git.kejizero.online/zhao/package_kernel_r8152 package/kernel/r8152
-git clone https://git.kejizero.online/zhao/package_kernel_r8101 package/kernel/r8101
-git clone https://git.kejizero.online/zhao/package_kernel_r8125 package/kernel/r8125
-git clone https://git.kejizero.online/zhao/package_kernel_r8126 package/kernel/r8126
+#rm -rf package/kernel/r8168 package/kernel/r8101 package/kernel/r8125 package/kernel/r8126
+#git clone https://git.kejizero.online/zhao/package_kernel_r8168 package/kernel/r8168
+#git clone https://git.kejizero.online/zhao/package_kernel_r8152 package/kernel/r8152
+#git clone https://git.kejizero.online/zhao/package_kernel_r8101 package/kernel/r8101
+#git clone https://git.kejizero.online/zhao/package_kernel_r8125 package/kernel/r8125
+#git clone https://git.kejizero.online/zhao/package_kernel_r8126 package/kernel/r8126
 
 # Adguardhome
 git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome
@@ -136,14 +136,14 @@ git clone https://git.kejizero.online/zhao/miniupnpd feeds/packages/net/miniupnp
 git clone https://git.kejizero.online/zhao/luci-app-upnp feeds/luci/applications/luci-app-upnp -b master
 
 # Zero-package
-git clone --depth=1 https://github.com/oppen321/Zero-package package/Zero-package
-sed -i 's/iStoreOS/ZeroWrt/' package/Zero-package/istoreos-files/files/etc/board.d/10_system
+#git clone --depth=1 https://github.com/oppen321/Zero-package package/Zero-package
+#sed -i 's/iStoreOS/ZeroWrt/' package/Zero-package/istoreos-files/files/etc/board.d/10_system
 
 # qBittorrent
 git clone https://github.com/sbwml/luci-app-qbittorrent package/luci-app-qbittorrent
 
 # 修改名称
-sed -i 's/OpenWrt/ZeroWrt/' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OpenWrt/' package/base-files/files/bin/config_generate
 
 # Theme
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
